@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Staff Meals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="order-container">
+        <h2>Place Staff Meal Orders</h2>
+        <form id="orderForm">
+            <label for="staffName">Staff Name:</label>
+            <input type="text" id="staffName" name="staffName" required>
+
+            <label for="epfNo">EPF Number:</label>
+            <input type="text" id="epfNo" name="epfNo" required>
+
+            <label for="meal">Meal Selection:</label>
+            <select id="meal" name="meal">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

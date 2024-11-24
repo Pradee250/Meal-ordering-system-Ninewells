@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Employer Dashboard</h1>
+        <h3>Orders for <span id="selectedDateDisplay"></span></h3>
+
+        <label for="dateSelect">Select Date:</label>
+        <input type="date" id="dateSelect" onchange="updateOrders()">
+
+        <div class="meal-options">
+            <button onclick="showOrderForm('breakfast')">Add Breakfast Order</button>
+            <button onclick="showOrderForm('lunch')">Add Lunch Order</button>
+            <button onclick="showOrderForm('dinner')">Add Dinner Order</button>
+        </div>
+
+        <h3>Meal Orders:</h3>
+
+        <!-- Breakfast Orders Section -->
+        <div class="meal-section" id="breakfastSection">
+            <h4>Breakfast Orders <span id="breakfastCount"></span></h4>
+            <table id="breakfastTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>EPF No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Breakfast orders will appear here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Lunch Orders Section -->
+        <div class="meal-section" id="lunchSection">
+            <h4>Lunch Orders <span id="lunchCount"></span></h4>
+            <table id="lunchTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>EPF No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Lunch orders will appear here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Dinner Orders Section -->
+        <div class="meal-section" id="dinnerSection">
+            <h4>Dinner Orders <span id="dinnerCount"></span></h4>
+            <table id="dinnerTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>EPF No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dinner orders will appear here -->
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Total Orders: <span id="totalCount"></span></h3>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="orderFormModal" style="display:none;">
+        <h3>Add Order</h3>
+        <form id="orderForm" onsubmit="addOrder(event)">
+            <label for="staffName">Staff Name:</label>
+            <input type="text" id="staffName" name="staffName" required>
+
+            <label for="epfNo">EPF Number:</label>
+            <input type="text" id="epfNo" name="epfNo" required>
+
+            <input type="hidden" id="mealType" name="mealType">
+
+            <button type="submit">Submit Order</button>
+            <button type="button" onclick="closeOrderForm()">Close</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
